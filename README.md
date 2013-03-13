@@ -1,3 +1,10 @@
+This is a fork that removes any dependencies from the SlidingMenu.
+It compiles against API level 14+
+- No suport library
+- No actionbar sherlok
+- No Google API
+
+
 SlidingMenu ([Play Store Demo][7])
 ===========
 
