@@ -1,14 +1,10 @@
 package com.slidingmenu.example.anim;
 
 import android.os.Bundle;
-import android.view.Menu;
 
 import com.slidingmenu.example.BaseActivity;
 import com.slidingmenu.example.R;
 import com.slidingmenu.example.SampleListFragment;
-import com.slidingmenu.example.R.id;
-import com.slidingmenu.example.R.layout;
-import com.slidingmenu.example.R.menu;
 import com.slidingmenu.lib.SlidingMenu;
 import com.slidingmenu.lib.SlidingMenu.CanvasTransformer;
 
@@ -26,7 +22,7 @@ public abstract class CustomAnimation extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		// set the Above View
 		setContentView(R.layout.content_frame);
-		getSupportFragmentManager()
+		getFragmentManager()
 		.beginTransaction()
 		.replace(R.id.content_frame, new SampleListFragment())
 		.commit();

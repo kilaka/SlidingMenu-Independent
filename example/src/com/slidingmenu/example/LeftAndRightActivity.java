@@ -1,14 +1,8 @@
 package com.slidingmenu.example;
 
 import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.ViewGroup;
 
-import com.slidingmenu.example.fragments.ColorFragment;
 import com.slidingmenu.lib.SlidingMenu;
-import com.slidingmenu.lib.SlidingMenu.OnClosedListener;
-import com.slidingmenu.lib.SlidingMenu.OnOpenedListener;
 
 
 public class LeftAndRightActivity extends BaseActivity {
@@ -24,14 +18,14 @@ public class LeftAndRightActivity extends BaseActivity {
 		getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
 		
 		setContentView(R.layout.content_frame);
-		getSupportFragmentManager()
+		getFragmentManager()
 		.beginTransaction()
 		.replace(R.id.content_frame, new SampleListFragment())
 		.commit();
 		
 		getSlidingMenu().setSecondaryMenu(R.layout.menu_frame_two);
 		getSlidingMenu().setSecondaryShadowDrawable(R.drawable.shadowright);
-		getSupportFragmentManager()
+		getFragmentManager()
 		.beginTransaction()
 		.replace(R.id.menu_frame_two, new SampleListFragment())
 		.commit();

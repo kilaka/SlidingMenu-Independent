@@ -2,8 +2,6 @@ package com.slidingmenu.lib;
 
 import java.lang.reflect.Method;
 
-import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -618,7 +616,6 @@ public class SlidingMenu extends RelativeLayout {
 	 *
 	 * @param i The width the Sliding Menu will open to, in pixels
 	 */
-	@SuppressWarnings("deprecation")
 	public void setBehindWidth(int i) {
 		int width;
 		Display display = ((WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE))
@@ -952,7 +949,6 @@ public class SlidingMenu extends RelativeLayout {
 	/* (non-Javadoc)
 	 * @see android.view.ViewGroup#fitSystemWindows(android.graphics.Rect)
 	 */
-	@SuppressLint("NewApi")
 	@Override
 	protected boolean fitSystemWindows(Rect insets) {
 		int leftPadding = insets.left;
@@ -968,7 +964,6 @@ public class SlidingMenu extends RelativeLayout {
 	
 	private Handler mHandler = new Handler();
 
-	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	public void manageLayers(float percentOpen) {
 		if (Build.VERSION.SDK_INT < 11) return;
 

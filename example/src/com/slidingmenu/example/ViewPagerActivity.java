@@ -1,13 +1,14 @@
 package com.slidingmenu.example;
 
+import info.fastpace.android.app.FragmentPagerAdapter;
+import info.fastpace.android.view.ViewPager;
+import info.fastpace.android.view.ViewPager.OnPageChangeListener;
+
 import java.util.ArrayList;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
 
 import com.slidingmenu.example.fragments.ColorFragment;
 import com.slidingmenu.lib.SlidingMenu;
@@ -24,7 +25,7 @@ public class ViewPagerActivity extends BaseActivity {
 
 		ViewPager vp = new ViewPager(this);
 		vp.setId("VP".hashCode());
-		vp.setAdapter(new ColorPagerAdapter(getSupportFragmentManager()));
+		vp.setAdapter(new ColorPagerAdapter(getFragmentManager()));
 		setContentView(vp);
 
 		vp.setOnPageChangeListener(new OnPageChangeListener() {

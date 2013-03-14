@@ -1,9 +1,6 @@
 package com.slidingmenu.example;
 
 import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
@@ -46,7 +43,7 @@ public class PropertiesActivity extends BaseActivity {
 				case R.id.left_right:
 					sm.setMode(SlidingMenu.LEFT_RIGHT);
 					sm.setSecondaryMenu(R.layout.menu_frame_two);
-					getSupportFragmentManager()
+					getFragmentManager()
 					.beginTransaction()
 					.replace(R.id.menu_frame_two, new SampleListFragment())
 					.commit();					
