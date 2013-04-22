@@ -2,6 +2,7 @@ package com.slidingmenu.example.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.os.Handler;
 
 import com.slidingmenu.example.BaseActivity;
 import com.slidingmenu.example.R;
@@ -40,6 +41,13 @@ public class FragmentChangeActivity extends BaseActivity {
 		
 		// customize the SlidingMenu
 		getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+		
+		new Handler().postDelayed(new Runnable() {
+	        @Override
+	        public void run() {
+	            showMenu();
+	        }
+	    }, 50);
 	}
 	
 	@Override
@@ -53,8 +61,10 @@ public class FragmentChangeActivity extends BaseActivity {
 		getFragmentManager()
 		.beginTransaction()
 		.replace(R.id.content_frame, fragment)
+		.addToBackStack(null)
 		.commit();
-		getSlidingMenu().showContent();
+//		showContent();
+//		getSlidingMenu().showContent();
 	}
 
 }
